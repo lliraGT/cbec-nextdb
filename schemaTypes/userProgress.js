@@ -149,6 +149,75 @@ export default {
           validation: Rule => Rule.max(3)
         }
       ]
+    },
+    // Experience Test
+    {
+      name: 'experienceTestCompleted',
+      title: 'Experience Test Completed',
+      type: 'boolean',
+      description: 'Flag to track if the Experience test is completed'
+    },
+    {
+      name: 'experienceTestCompletionDate',
+      title: 'Experience Test Completion Date',
+      type: 'datetime',
+      description: 'Date when the Experience test was completed'
+    },
+    {
+      name: 'experienceTestResults',
+      title: 'Experience Test Results',
+      type: 'object',
+      description: 'Results from the Experience test',
+      fields: [
+        {
+          name: 'experienceTypes',
+          title: 'Experience Types',
+          type: 'array',
+          of: [{ type: 'string' }],
+          description: 'Types of experiences selected by the user'
+        },
+        {
+          name: 'significantEvents',
+          title: 'Significant Events',
+          type: 'array',
+          of: [{ type: 'string' }],
+          description: 'Significant events selected by the user'
+        },
+        {
+          name: 'positiveExperiences',
+          title: 'Positive Experiences',
+          type: 'array',
+          of: [{ type: 'string' }],
+          description: 'Positive experiences selected by the user'
+        },
+        {
+          name: 'painfulExperiences',
+          title: 'Painful Experiences',
+          type: 'array',
+          of: [{ type: 'string' }],
+          description: 'Custom painful experiences entered by the user'
+        },
+        {
+          name: 'lessonsLearned',
+          title: 'Lessons Learned',
+          type: 'text',
+          description: 'Lessons the user has learned from their experiences'
+        },
+        {
+          name: 'impactOnMinistry',
+          title: 'Impact on Ministry',
+          type: 'text',
+          description: 'How experiences have influenced the user\'s ministry'
+        },
+        {
+          name: 'topTwoExperiences',
+          title: 'Top Two Experiences',
+          type: 'array',
+          of: [{ type: 'string' }],
+          description: 'The two most significant experiences identified by the user',
+          validation: Rule => Rule.max(2)
+        }
+      ]
     }
   ]
 }
